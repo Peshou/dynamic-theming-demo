@@ -1,0 +1,58 @@
+@import "../../styles/variables";
+@import "~@angular/material/theming";
+
+/// HERO-CONTENT VARIABLES
+$theme-hero-content-background-color: var(--theme-hero-content-background-color);
+$theme-hero-content-lighter-background-color: hsl(
+    var(--theme-hero-content-background-color-h),
+    var(--theme-hero-content-background-color-s),
+    calc(var(--theme-hero-content-background-color-l) / 0.7)
+);
+
+$theme-hero-content-hover-background-color: var(--theme-hero-content-hover-background-color);
+$theme-hero-content-lighter-hover-background-color: hsl(
+    var(--theme-hero-content-hover-background-color-h),
+    var(--theme-hero-content-hover-background-color-s),
+    calc(var(--theme-hero-content-hover-background-color-l) / 0.7)
+);
+
+$theme-hero-content-text-color: var(--theme-hero-content-text-color);
+$theme-hero-content-hover-text-color: var(--theme-hero-content-hover-text-color);
+/// END HERO CONTENT VARIABLES
+
+.hero-content-wrapper {
+  cursor: pointer;
+  background: radial-gradient(
+      circle at 80%,
+      $theme-hero-content-lighter-background-color 0%,
+      $theme-hero-content-background-color 100%
+  );
+
+  &:hover {
+    background: radial-gradient(
+        circle at 80%,
+        $theme-hero-content-lighter-hover-background-color 0%,
+        $theme-hero-content-hover-background-color 100%
+    );
+  }
+
+  .hero-content {
+    padding: 4rem;
+    text-align: center;
+    color: $theme-hero-content-text-color;
+
+    &:hover {
+      color: $theme-hero-content-hover-text-color;
+    }
+  }
+}
+
+// We will use the material palette to fetch the color
+// We could also just use the variables that we've created, but this is an example of a different approach
+.hero-900-variation {
+  padding: 20px;
+  margin-top: 20px;
+  font-size: 20px;
+  background-color: mat-color($theme-primary-palette, 900) !important;
+  color: mat-color($theme-primary-palette, '900-contrast');
+}

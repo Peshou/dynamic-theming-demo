@@ -1,0 +1,31 @@
+@import "../../styles/variables";
+
+/// SHOWCASE-CONTENT VARIABLES
+$theme-showcase-content-background-color: var(--theme-showcase-content-background-color);
+$theme-showcase-content-lighter-hover-background-color: hsl(
+    var(--theme-showcase-content-hover-background-color-h),
+    var(--theme-showcase-content-hover-background-color-s),
+    calc(var(--theme-showcase-content-hover-background-color-l) / 0.5)
+);
+$theme-showcase-content-text-color: var(--theme-showcase-content-text-color);
+$theme-showcase-content-hover-text-color: var(--theme-showcase-content-hover-text-color);
+/// END SHOWCASE CONTENT VARIABLES
+
+.showcase-content-wrapper {
+  cursor: pointer;
+  background: $theme-showcase-content-background-color;
+
+  &:hover {
+    background: $theme-showcase-content-lighter-hover-background-color;
+  }
+
+  .showcase-content {
+    padding: 4rem;
+    text-align: center;
+    color: $theme-showcase-content-text-color;
+
+    &:hover {
+      color: $theme-showcase-content-hover-text-color;
+    }
+  }
+}
